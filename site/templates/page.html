@@ -1,0 +1,87 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 class="title">
+  {{ page.title }}
+</h1>
+
+{#
+<p>
+start
+</p>
+<ul>
+{% for k, v in page %}
+<li>
+	'{{ k }}' : '{{ v }}'
+</li>
+{% endfor %}
+</ul>
+end
+</p>
+#}
+
+<p class="subtitle">
+{% if page.extra.czdate %}
+<strong>{{ page.extra.czdate }}</strong>
+{% endif %}
+<br>
+<span>Tagy:
+		{% for tag in page.taxonomies.tags %}
+			<a href="{{ get_taxonomy_url(kind="tags", name=tag) | safe}}">{{ tag }}</a> 
+			&nbsp;
+		{% endfor %}
+	&nbsp; &nbsp; Autor predikce:
+		{% for autor in page.taxonomies.autor_predikce%}
+			<a href="{{ get_taxonomy_url(kind="autor_predikce", name=autor) | safe }}">{{ autor }}</a>
+			&nbsp;
+		{% endfor %}
+</span>
+</p>
+
+{% if page.description %}
+<p class="lead">{{ page.description | safe }}</p>
+{% endif %}
+
+{% if page.extra.fronttext %}
+<p>{{ page.extra.fronttext | safe }}</p>
+{% endif %}
+
+{% if page.toc %}
+<div class="alert alert-toc">
+	<h4 class='alert-heading'>Obsah:</h4>
+
+    <ul>
+    {% for h1 in page.toc %}
+        <li>
+            <a href="{{ h1.permalink | safe }}">{{ h1.title }}</a>
+            {% if h1.children %}
+                <ul>
+                    {% for h2 in h1.children %}
+                        <li>
+                            <a href="{{ h2.permalink | safe }}">{{ h2.title }}</a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        </li>
+    {% endfor %}
+    </ul>
+</div>
+{% endif %}
+
+{{ page.content | safe }}
+
+<br>
+<br>
+<br>
+<h3>Všechny předpovědi od:</h3>
+	<ul>
+{% for autor in page.taxonomies.autor_predikce %}
+	<li>
+	<a href="/autor-predikce/{{ autor | safe }}">{{ autor }}</a>
+	</li>
+{% endfor %}
+</ul>
+
+{% endblock content %}
+

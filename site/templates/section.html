@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 class="title">
+  {{ section.title }}
+</h1>
+{{ section.content | safe }}
+  {% for page in section.pages %}
+  <h3>
+  <a class='headerlink' href="{{ page.permalink | safe }}">{{ page.title }}</a>
+  </h3>
+		<span>
+	  {% if page.extra.czdate %}
+	  {{ page.extra.czdate }}
+	  {% endif %}
+	&nbsp; &nbsp; Tagy:
+		{% for tag in page.taxonomies.tags %}
+			<a href="/tags/{{ tag | safe }}">{{ tag }}</a> 
+			&nbsp;
+		{% endfor %}
+	&nbsp; &nbsp; Autor predikce:
+		{% for autor in page.taxonomies.autor_predikce%}
+			<a href="/autor-predikce/{{ autor | safe }}">{{ autor }}</a>
+			&nbsp;
+		{% endfor %}
+	</span>
+	  {% if page.description %}
+		<p class="lead">{{ page.description }}</p>
+	  {% endif %}
+	  <br>
+	  <br>
+  {% endfor %}
+{% endblock content %}
+
