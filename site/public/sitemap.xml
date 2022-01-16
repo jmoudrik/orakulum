@@ -1,31 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-        <loc>https://orakulum.j2m.cz/</loc>
+        <loc>http://orakulum.j2m.cz/</loc>
     </url>
     <url>
-        <loc>https://orakulum.j2m.cz/autor_predikce/</loc>
+        <loc>http://orakulum.j2m.cz/autor_predikce/</loc>
     </url>
     <url>
-        <loc>https://orakulum.j2m.cz/autor_predikce/sssirda/</loc>
+        <loc>http://orakulum.j2m.cz/autor_predikce/sssirda/</loc>
     </url>
     <url>
-        <loc>https://orakulum.j2m.cz/o-projektu/</loc>
+        <loc>http://orakulum.j2m.cz/o-projektu/</loc>
     </url>
     <url>
-        <loc>https://orakulum.j2m.cz/predikce/</loc>
+        <loc>http://orakulum.j2m.cz/predikce/</loc>
     </url>
     <url>
-        <loc>https://orakulum.j2m.cz/predikce/sssirda-prezidentske-volby-vyhraje-biden/</loc>
+        <loc>http://orakulum.j2m.cz/predikce/sssirda-prezidentske-volby-vyhraje-biden/</loc>
         <lastmod>2020-12-10T16:30:00</lastmod>
     </url>
     <url>
-        <loc>https://orakulum.j2m.cz/tags/</loc>
+        <loc>http://orakulum.j2m.cz/tags/</loc>
     </url>
     <url>
-        <loc>https://orakulum.j2m.cz/tags/politika/</loc>
+        <loc>http://orakulum.j2m.cz/tags/politika/</loc>
     </url>
     <url>
-        <loc>https://orakulum.j2m.cz/tags/vyhodnoceno/</loc>
+        <loc>http://orakulum.j2m.cz/tags/vyhodnoceno/</loc>
     </url>
 </urlset>

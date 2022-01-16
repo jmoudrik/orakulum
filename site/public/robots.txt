@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://orakulum.j2m.cz/sitemap.xml
+Sitemap: http://orakulum.j2m.cz/sitemap.xml

@@ -1,5 +1,5 @@
 # The URL the site will be built for
-base_url = "https://orakulum.j2m.cz"
+base_url = "http://orakulum.j2m.cz"
 
 # Whether to automatically compile all Sass files in the sass directory
 compile_sass = true
