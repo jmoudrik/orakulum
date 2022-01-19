@@ -5,7 +5,7 @@
 Aby nebylo potřeba ručně editovat HTML soubory, web
 používá jednoduchý statický [Zola engine](https://www.getzola.org/).
 Ten používá [Markdown formát](https://www.markdownguide.org/basic-syntax/) pro editaci.
-Web nemá (zatím) žádné CMS, změny udělané v tomto git repositáři se každých 5 minut 
+Web nemá (zatím) žádné CMS, změny udělané v tomto git repositáři se každou minutu 
 jednoduše překlopí na server (pokud build stránky nezpůsobí žádné chyby).
 
 
@@ -16,10 +16,22 @@ jednoduše překlopí na server (pokud build stránky nezpůsobí žádné chyby
 	[predikce](https://github.com/jmoudrik/orakulum/tree/master/site/content/predikce)
 	- tam můžete třeba kliknout na **add file** pro přidání nového souboru
 	- jako výchozí bod pro nové posty můžete použít obsah souboru [template](https://raw.githubusercontent.com/jmoudrik/orakulum/master/site/content/predikce/template.md), (zkopírujte jako obsah nového souboru).
+- každou úpravu musíte dole na editační stránce Commitnout (~ uložit), je fajn
+    při ukládání popsat (zhruba) změny v políčku Commit-message.
 - úpravy se automaticky každých 5 minut překlopí na server
 
 
-## Q: Jak rozběhat web u mě na počítači pro lokální editace?
+## Q: Co když má mnou vytvořený markdown chybu?
+
+Na slacku je kanál `builds` kam bot automaticky hlásí všechny chyby na které narazí. Tzn, workflow je:
+- Edit > Commit > kanál builds
+	- pak buď hotovo, když build webu prošel
+	- nebo znovu Edit, ... 
+Jo, UX editovani je takhle trochu pain, zato je ale takhle celý web super jednoduchý a setup byl snadný.
+Když to nebude vyhovovat, tak uděláme něco lepšího.
+
+
+## Q: Jak rozběhat web u mne na počítači pro lokální editace?
 
 ### 1. Stáhnout závislosti
 
