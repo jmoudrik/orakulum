@@ -78,7 +78,7 @@ end
 	<ul>
 {% for autor in page.taxonomies.autor_predikce %}
 	<li>
-	<a href="/autor-predikce/{{ autor | safe }}">{{ autor }}</a>
+	<a href="{{ get_taxonomy_url(kind="autor_predikce", name=autor) | safe }}">{{ autor }}</a>
 	</li>
 {% endfor %}
 </ul>

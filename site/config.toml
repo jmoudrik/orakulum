@@ -14,6 +14,7 @@ minify_html = false
 taxonomies = [
     { name = "autor_predikce", feed = true},
     { name = "tags", feed = true},
+    { name = "autor_zapisu", feed = true},
 ]
 
 
@@ -24,3 +25,5 @@ highlight_code = false
 
 [extra]
 # Put all your custom variables here
+
+site_name = "Orákulum"
