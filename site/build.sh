@@ -16,19 +16,42 @@ slack_msg () {
 	curl -X POST -H 'Content-type: application/json' --data "$DATA" "$(cat SLACK_SECRET)"
 }
 
-zola build 2>&1 > LOG_build && {
+zola build 2>&1 > LOG_build
+
+ZOLA_STATE="$?"
+
+if [ "$ZOLA_STATE" -eq 0 ] ; then
 	# Success
 	echo good
-	slack_msg 'Build live!'
+	slack_msg 'Build live @ http://orakulum.j2m.cz'
 
 	# push to webserver
-	[ -e "TARGET_WWW_DIR" ] && mv public "$(cat TARGET_WWW_DIR)"
-} || {
+	[ -e "TARGET_WWW_DIR" ] && {
+		# we need to do this in order to swap the dirs atomically
+
+		THIS_BUILD="$(cat TARGET_WWW_DIR)/public-$GIT_LAST_COMMIT"
+		TARGET_SYMLINK="$(cat TARGET_WWW_DIR)/www-public"
+		NEW_SYMLINK="$(cat TARGET_WWW_DIR)/www-public-new"
+		OLD_BUILD="$(readlink "$TARGET_SYMLINK")"
+
+		rm -rf "$THIS_BUILD"
+		mv public "$THIS_BUILD"
+		ln -s "$THIS_BUILD" "$NEW_SYMLINK"
+
+		# atomically swap new symlink for the oldone
+		mv -T "$NEW_SYMLINK" "$TARGET_SYMLINK"
+
+		[ "$OLD_BUILD" != "$THIS_BUILD" ] && {
+			echo rm old build "$OLD_BUILD"
+			rm -rf "$OLD_BUILD"
+		}
+	}
+else
 	# Error
 	echo err
 
 	slack_msg "\n$( cat LOG_build | grep -v 'Building site' )"
-} 
+fi
 
 echo $GIT_LAST_COMMIT > LAST_COMMIT
 
