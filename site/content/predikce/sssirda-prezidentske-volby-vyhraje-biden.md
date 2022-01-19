@@ -14,7 +14,7 @@ vyhodnoceni = 1
 
 [taxonomies]
 autor_predikce = ["sssirda"]
-tags = ["vyhodnoceno", "politika"]
+tags = ["vyhodnoceno","politika"]
 +++
 
 ## Předpověď
@@ -29,4 +29,5 @@ volby vyhraje Joe Biden, a to s vysokou pravděpodobností 90%.
 Podle [Wikipedie](https://en.wikipedia.org/wiki/2020_United_States_presidential_election)
 vyhrál volby skutečně Joe Biden, takže tuto předpověď vyhodnocujeme jako **správnou**.
 
+## Test
 
