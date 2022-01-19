@@ -19,11 +19,10 @@ slack_msg () {
 zola build 2>&1 > LOG_build && {
 	# Success
 	echo good
-
 	slack_msg 'Build live!'
-	# push to webserver
 
-	# TODO
+	# push to webserver
+	[ -e "TARGET_WWW_DIR" ] && mv public "$(cat TARGET_WWW_DIR)"
 } || {
 	# Error
 	echo err
