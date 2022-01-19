@@ -9,7 +9,8 @@ description = "Je bolest kolen dobrým ukazatelem vývoje počasí?"
 # format rok-mesic-denThodiny:minuty:vteriny
 date = 2020-12-10T16:30:00
 
-# posty co maji draft = true se ukazou jen na dev verzi
+# posty co maji draft = true se neukazou na webu, ale 
+# jsou zkontrolovany (build botem)
 # muze byt bud true nebo false
 draft = true
 
